@@ -67,6 +67,7 @@ const [paperBagImage, setPaperBagImage] = useState(0);
           <a href="#shop">Catálogo</a>
           <a href="#about">Nosotros</a>
           <a href="#faq">FAQ</a>
+          <a href="/size-guide">GUÍA DE TALLAS</a>
           <a
             href="https://instagram.com/resetlimaco"
             target="_blank"
@@ -415,6 +416,12 @@ const [paperBagImage, setPaperBagImage] = useState(0);
               <p className="text-gray-500">
                 Disponible · Talla L
               </p>
+              <button
+  onClick={() => window.open("/size-guide", "_blank")}
+  className="mt-3 text-sm underline text-gray-600 hover:text-black"
+>
+  Ver guía de tallas
+</button>
             </div>
 
           </div>
