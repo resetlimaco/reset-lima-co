@@ -388,12 +388,6 @@ const [paperBagImage, setPaperBagImage] = useState(0);
 >
   Ver guía de tallas
 </button>
-              <button
-  onClick={() => window.open("/size-guide", "_blank")}
-  className="mt-3 text-sm underline text-gray-600 hover:text-black"
->
-  Ver guía de tallas
-</button>
             </div>
             {/* PRODUCTO 5 */}
             <div className="bg-white border border-gray-200 p-8">
