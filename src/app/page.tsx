@@ -20,6 +20,12 @@ export default function Home() {
     "/products/ck-greenolive-front.webp",
     "/products/ck-greenolive-back.webp",
   ]
+  const allSaintsWhiteImages = [
+  "/products/allsaints-white-front.avif",
+  "/products/allsaints-white-back.avif",
+];
+
+const [allSaintsWhiteImage, setAllSaintsWhiteImage] = useState(0);
 
   const [greenOliveImage, setGreenOliveImage] = useState(0)
 
@@ -205,29 +211,58 @@ const [paperBagImage, setPaperBagImage] = useState(0);
               </p>
             </div>
 
-            {/* PRODUCTO 2 */}
-            <div className="bg-white border border-gray-200 p-8">
-              <Image
-                src="/products/allsaints-white-front.avif"
-                alt="AllSaints Descent Oversized Graphic T-Shirt"
-                width={600}
-                height={800}
-                className="w-full h-96 object-cover mb-4"
-              />
+{/* PRODUCTO 2 */}
+<div className="bg-white border border-gray-200 p-8">
+  <div className="relative mb-4">
 
-              <h3 className="text-xl mb-2">
-                AllSaints Descent Oversized Graphic T-Shirt
-              </h3>
+    <button
+      onClick={() =>
+        setAllSaintsWhiteImage(
+          allSaintsWhiteImage === 0
+            ? allSaintsWhiteImages.length - 1
+            : allSaintsWhiteImage - 1
+        )
+      }
+      className="absolute left-2 top-1/2 -translate-y-1/2 z-10 px-3 text-3xl text-gray-600 hover:text-black"
+    >
+      ‹
+    </button>
 
-              <p className="text-gray-900 font-medium mb-2">
-                S/ 459
-              </p>
+    <Image
+      src={allSaintsWhiteImages[allSaintsWhiteImage]}
+      alt="AllSaints Descent Oversized Graphic T-Shirt"
+      width={600}
+      height={800}
+      className="w-full h-96 object-cover"
+    />
 
-              <p className="text-gray-500">
-                Disponible · Talla M
-              </p>
-            </div>
+    <button
+      onClick={() =>
+        setAllSaintsWhiteImage(
+          allSaintsWhiteImage === allSaintsWhiteImages.length - 1
+            ? 0
+            : allSaintsWhiteImage + 1
+        )
+      }
+      className="absolute right-2 top-1/2 -translate-y-1/2 z-10 px-3 text-3xl text-gray-600 hover:text-black"
+    >
+      ›
+    </button>
 
+  </div>
+
+  <h3 className="text-xl mb-2">
+    AllSaints Descent Oversized Graphic T-Shirt
+  </h3>
+
+  <p className="text-gray-900 font-medium mb-2">
+    S/ 459
+  </p>
+
+  <p className="text-gray-500">
+    Disponible · Talla M
+  </p>
+</div>
             <div className="bg-white border border-gray-200 p-8">
               <div className="relative mb-4">
                 <button
