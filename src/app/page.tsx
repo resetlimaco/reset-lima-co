@@ -210,6 +210,12 @@ const [paperBagImage, setPaperBagImage] = useState(0);
               <p className="text-gray-500">
                 Disponible · Talla M
               </p>
+              <button
+  onClick={() => window.open("/size-guide", "_blank")}
+  className="mt-3 text-sm underline text-gray-600 hover:text-black"
+>
+  Ver guía de tallas
+</button>
             </div>
 
 {/* PRODUCTO 2 */}
@@ -263,6 +269,12 @@ const [paperBagImage, setPaperBagImage] = useState(0);
   <p className="text-gray-500">
     Disponible · Talla M
   </p>
+  <button
+  onClick={() => window.open("/size-guide", "_blank")}
+  className="mt-3 text-sm underline text-gray-600 hover:text-black"
+>
+  Ver guía de tallas
+</button>
 </div>
             <div className="bg-white border border-gray-200 p-8">
               <div className="relative mb-4">
@@ -312,6 +324,12 @@ const [paperBagImage, setPaperBagImage] = useState(0);
               <p className="text-gray-500">
                 Disponible · Talla L
               </p>
+              <button
+  onClick={() => window.open("/size-guide", "_blank")}
+  className="mt-3 text-sm underline text-gray-600 hover:text-black"
+>
+  Ver guía de tallas
+</button>
             </div>
             {/* PRODUCTO 4 */}
             <div className="bg-white border border-gray-200 p-8">
@@ -364,6 +382,12 @@ const [paperBagImage, setPaperBagImage] = useState(0);
               <p className="text-gray-500">
                 Disponible · Tallas M y L
               </p>
+              <button
+  onClick={() => window.open("/size-guide", "_blank")}
+  className="mt-3 text-sm underline text-gray-600 hover:text-black"
+>
+  Ver guía de tallas
+</button>
             </div>
             {/* PRODUCTO 5 */}
             <div className="bg-white border border-gray-200 p-8">
