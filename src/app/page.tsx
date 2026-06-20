@@ -1,9 +1,54 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+
 import { Cormorant_Garamond } from "next/font/google";
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
 });
 export default function Home() {
+
+  const [blackImage, setBlackImage] = useState(0);
+
+  const blackImages = [
+    "/products/allsaints-black-front.avif",
+    "/products/allsaints-black-back.avif",
+  ];
+  const greenOliveImages = [
+    "/products/ck-greenolive-front.webp",
+    "/products/ck-greenolive-back.webp",
+  ]
+
+  const [greenOliveImage, setGreenOliveImage] = useState(0)
+
+const whiteImages = [
+  "/products/ck-white-front.webp",
+  "/products/ck-white-back.webp",
+];
+
+const [whiteImage, setWhiteImage] = useState(0);
+const beigeImages = [
+  "/products/ck-beige-front.webp",
+  "/products/ck-beige-back.webp",
+];
+
+const [beigeImage, setBeigeImage] = useState(0);
+const navyBagImages = [
+  "/products/longchamp-navy-front.jpg",
+  "/products/longchamp-navy-back.jpg",
+  "/products/longchamp-navy-small.jpg",
+];
+
+const paperBagImages = [
+  "/products/longchamp-paper-front.jpg",
+  "/products/longchamp-paper-back.jpg",
+  "/products/longchamp-paper-small.jpg",
+];
+
+const [navyBagImage, setNavyBagImage] = useState(0);
+const [paperBagImage, setPaperBagImage] = useState(0);
   return (
     <main className="min-h-screen bg-white text-black">
       {/* NAVBAR */}
@@ -63,43 +108,404 @@ export default function Home() {
       {/* CATEGORIES */}
       <section
         id="shop"
-        className="grid grid-cols-1 md:grid-cols-4 gap-6 px-8 pb-24"
+        className="grid grid-cols-2 md:grid-cols-4 gap-6 px-8 pb-24"
       >
-        {["POLOS", "HOODIES", "GORRAS", "SNEAKERS"].map((item) => (
-          <div
-            key={item}
-            className="border border-gray-200 p-12 text-center hover:border-black transition"
-          >
-            <h3 className="text-2xl font-light">{item}</h3>
-          </div>
-        ))}
+
+        <a
+          href="#polos"
+          className="border border-gray-200 p-12 text-center hover:border-black transition block"
+        >
+          <h3 className="text-2xl font-light">POLOS</h3>
+        </a>
+
+        <a
+          href="#carteras"
+          className="border border-gray-200 p-12 text-center hover:border-black transition block"
+        >
+          <h3 className="text-2xl font-light">CARTERAS</h3>
+        </a>
+
+        <a
+          href="#sneakers"
+          className="border border-gray-200 p-12 text-center hover:border-black transition block"
+        >
+          <h3 className="text-2xl font-light">SNEAKERS</h3>
+        </a>
+
+        <a
+          href="#gorras"
+          className="border border-gray-200 p-12 text-center hover:border-black transition block"
+        >
+          <h3 className="text-2xl font-light">GORRAS</h3>
+        </a>
       </section>
 
       {/* FEATURED */}
       <section className="px-8 py-24 bg-zinc-50">
         <h2 className="text-4xl font-light mb-12 text-center">
-          PRODUCTOS DESTACADOS
+          NEW ARRIVALS
         </h2>
+        <div id="polos" className="px-8 py-24">
+          <h2 className="text-4xl font-light text-center mb-12">
+            POLOS
+          </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[1, 2, 3].map((product) => (
-            <div
-              key={product}
-              className="bg-white border border-gray-200 p-8"
-            >
-              <div className="h-72 bg-gray-100 mb-4"></div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            {/* PRODUCTO 1 */}
+            <div className="bg-white border border-gray-200 p-8">
+              <div className="relative mb-4">
+
+                <button
+                  onClick={() =>
+                    setBlackImage(
+                      blackImage === 0
+                        ? blackImages.length - 1
+                        : blackImage - 1
+                    )
+                  }
+                  className="absolute left-2 top-1/2 -translate-y-1/2 z-10 px-3 text-3xl text-gray-600 hover:text-black"
+                >
+                  ‹
+                </button>
+
+                <Image
+                  src={blackImages[blackImage]}
+                  alt="AllSaints Tierra Oversized Crew Neck Logo T-Shirt"
+                  width={600}
+                  height={800}
+                  className="w-full h-96 object-cover"
+                />
+
+                <button
+                  onClick={() =>
+                    setBlackImage(
+                      blackImage === blackImages.length - 1
+                        ? 0
+                        : blackImage + 1
+                    )
+                  }
+                  className="absolute right-2 top-1/2 -translate-y-1/2 z-10 px-3 text-3xl text-gray-600 hover:text-black"
+                >
+                  ›
+                </button>
+
+              </div>
 
               <h3 className="text-xl mb-2">
-                RESET Essential Tee
+                AllSaints Tierra Oversized Crew Neck Logo T-Shirt
               </h3>
 
+              <p className="text-gray-900 font-medium mb-2">
+                S/ 489
+              </p>
+
               <p className="text-gray-500">
-                S/ 89.00
+                Disponible · Talla M
               </p>
             </div>
-          ))}
+
+            {/* PRODUCTO 2 */}
+            <div className="bg-white border border-gray-200 p-8">
+              <Image
+                src="/products/allsaints-white-front.avif"
+                alt="AllSaints Descent Oversized Graphic T-Shirt"
+                width={600}
+                height={800}
+                className="w-full h-96 object-cover mb-4"
+              />
+
+              <h3 className="text-xl mb-2">
+                AllSaints Descent Oversized Graphic T-Shirt
+              </h3>
+
+              <p className="text-gray-900 font-medium mb-2">
+                S/ 459
+              </p>
+
+              <p className="text-gray-500">
+                Disponible · Talla M
+              </p>
+            </div>
+
+            <div className="bg-white border border-gray-200 p-8">
+              <div className="relative mb-4">
+                <button
+                  onClick={() =>
+                    setGreenOliveImage(
+                      greenOliveImage === 0
+                        ? greenOliveImages.length - 1
+                        : greenOliveImage - 1
+                    )
+                  }
+                  className="absolute left-2 top-1/2 -translate-y-1/2 z-10 px-3 text-3xl text-gray-600 hover:text-black"
+                >
+                  ‹
+                </button>
+
+                <Image
+                  src={greenOliveImages[greenOliveImage]}
+                  alt="Calvin Klein Bold Logo Graphic Tee"
+                  width={600}
+                  height={800}
+                  className="w-full h-96 object-cover"
+                />
+
+                <button
+                  onClick={() =>
+                    setGreenOliveImage(
+                      greenOliveImage === greenOliveImages.length - 1
+                        ? 0
+                        : greenOliveImage + 1
+                    )
+                  }
+                  className="absolute right-2 top-1/2 -translate-y-1/2 z-10 px-3 text-3xl text-gray-600 hover:text-black"
+                >
+                  ›
+                </button>
+              </div>
+
+              <h3 className="text-xl mb-2">
+                Calvin Klein Bold Logo Graphic Tee
+              </h3>
+
+              <p className="text-gray-900 font-medium mb-2">
+                S/ 139
+              </p>
+
+              <p className="text-gray-500">
+                Disponible · Talla L
+              </p>
+            </div>
+            {/* PRODUCTO 4 */}
+            <div className="bg-white border border-gray-200 p-8">
+              <div className="relative mb-4">
+
+                <button
+                  onClick={() =>
+                    setWhiteImage(
+                      whiteImage === 0
+                        ? whiteImages.length - 1
+                        : whiteImage - 1
+                    )
+                  }
+                  className="absolute left-2 top-1/2 -translate-y-1/2 z-10 px-3 text-3xl text-gray-600 hover:text-black"
+                >
+                  ‹
+                </button>
+
+                <Image
+                  src={whiteImages[whiteImage]}
+                  alt="Calvin Klein Stacked Logo Easy Tee"
+                  width={600}
+                  height={800}
+                  className="w-full h-96 object-cover"
+                />
+
+                <button
+                  onClick={() =>
+                    setWhiteImage(
+                      whiteImage === whiteImages.length - 1
+                        ? 0
+                        : whiteImage + 1
+                    )
+                  }
+                  className="absolute right-2 top-1/2 -translate-y-1/2 z-10 px-3 text-3xl text-gray-600 hover:text-black"
+                >
+                  ›
+                </button>
+
+              </div>
+
+              <h3 className="text-xl mb-2">
+                Calvin Klein Stacked Logo Easy Tee
+              </h3>
+
+              <p className="text-gray-900 font-medium mb-2">
+                S/ 139
+              </p>
+
+              <p className="text-gray-500">
+                Disponible · Tallas M y L
+              </p>
+            </div>
+            {/* PRODUCTO 5 */}
+            <div className="bg-white border border-gray-200 p-8">
+              <div className="relative mb-4">
+
+                <button
+                  onClick={() =>
+                    setBeigeImage(
+                      beigeImage === 0
+                        ? beigeImages.length - 1
+                        : beigeImage - 1
+                    )
+                  }
+                  className="absolute left-8 top-1/2 -translate-y-1/2 z-10 px-3 text-3xl text-gray-600 hover:text-black"
+                >
+                  ‹
+                </button>
+
+                <Image
+                  src={beigeImages[beigeImage]}
+                  alt="Calvin Klein Bold Logo Graphic Tee Relaxed T-Shirt"
+                  width={600}
+                  height={800}
+                  className="w-full h-96 object-cover"
+                />
+
+                <button
+                  onClick={() =>
+                    setBeigeImage(
+                      beigeImage === beigeImages.length - 1
+                        ? 0
+                        : beigeImage + 1
+                    )
+                  }
+                  className="absolute right-8 top-1/2 -translate-y-1/2 z-10 px-3 text-3xl text-gray-600 hover:text-black"
+                >
+                  ›
+                </button>
+
+              </div>
+
+              <h3 className="text-xl mb-2">
+                Calvin Klein Bold Logo Graphic Tee Relaxed T-Shirt
+              </h3>
+
+              <p className="text-gray-900 font-medium mb-2">
+                S/ 139
+              </p>
+
+              <p className="text-gray-500">
+                Disponible · Talla L
+              </p>
+            </div>
+
+          </div>
         </div>
       </section>
+      <section id="carteras" className="px-8 py-24 bg-zinc-50">
+        <h2 className="text-4xl font-light text-center mb-12">
+          CARTERAS
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+    {/* LONGCHAMP NAVY */}
+    <div className="bg-white border border-gray-200 p-8">
+
+      <div className="relative mb-4">
+
+        <button
+          onClick={() =>
+            setNavyBagImage(
+              navyBagImage === 0
+                ? navyBagImages.length - 1
+                : navyBagImage - 1
+            )
+          }
+          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 px-3 text-3xl text-gray-600 hover:text-black"
+        >
+          ‹
+        </button>
+
+        <Image
+          src={navyBagImages[navyBagImage]}
+          alt="Longchamp Le Pliage Original M Navy"
+          width={600}
+          height={800}
+          className="w-full h-[500px] object-contain"
+        />
+
+        <button
+          onClick={() =>
+            setNavyBagImage(
+              navyBagImage === navyBagImages.length - 1
+                ? 0
+                : navyBagImage + 1
+            )
+          }
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 px-3 text-3xl text-gray-600 hover:text-black"
+        >
+          ›
+        </button>
+
+      </div>
+
+      <h3 className="text-xl mb-2">
+        Longchamp Le Pliage Original M
+      </h3>
+
+      <p className="text-gray-900 font-medium mb-2">
+        S/ 949
+      </p>
+
+      <p className="text-gray-500">
+        Color Navy · Size M
+      </p>
+
+    </div>
+
+    {/* LONGCHAMP PAPER */}
+    <div className="bg-white border border-gray-200 p-8">
+
+      <div className="relative mb-4">
+
+        <button
+          onClick={() =>
+            setPaperBagImage(
+              paperBagImage === 0
+                ? paperBagImages.length - 1
+                : paperBagImage - 1
+            )
+          }
+          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 px-3 text-3xl text-gray-600 hover:text-black"
+        >
+          ‹
+        </button>
+
+        <Image
+          src={paperBagImages[paperBagImage]}
+          alt="Longchamp Le Pliage Original M Paper"
+          width={600}
+          height={800}
+          className="w-full h-[500px] object-contain"
+        />
+
+        <button
+          onClick={() =>
+            setPaperBagImage(
+              paperBagImage === paperBagImages.length - 1
+                ? 0
+                : paperBagImage + 1
+            )
+          }
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 px-3 text-3xl text-gray-600 hover:text-black"
+        >
+          ›
+        </button>
+
+      </div>
+
+      <h3 className="text-xl mb-2">
+        Longchamp Le Pliage Original M
+      </h3>
+
+      <p className="text-gray-900 font-medium mb-2">
+        S/ 949
+      </p>
+
+      <p className="text-gray-500">
+        Color Paper · Size M
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
 {/* FAQ */}
 <section id="faq" className="px-8 py-24">
   <h2 className="text-4xl font-bold text-center mb-12">

@@ -31,3 +31,12 @@ export default function RootLayout({
     </html>
   );
 }
+import { Cormorant_Garamond } from "next/font/google";
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+});
+
+export { cormorant };
+<body className={cormorant.className}></body>
